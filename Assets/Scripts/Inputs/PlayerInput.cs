@@ -1,14 +1,11 @@
+using PirateGame.Character;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace PirateGame.Inputs
 {
-    [System.Serializable]
-    public class PlayerMovementEvent : UnityEvent<Vector2> { }
-
     public class PlayerInput : MonoBehaviour
     {
-        [SerializeField] private PlayerMovementEvent _onPlayerMoved;
+        [SerializeField] private CharacterMovementEvent _onPlayerMoved;
 
         private void Update()
         {

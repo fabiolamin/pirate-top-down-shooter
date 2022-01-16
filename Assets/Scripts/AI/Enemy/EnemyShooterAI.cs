@@ -1,6 +1,7 @@
+using PirateGame.AI;
 using UnityEngine;
 
-namespace PirateGame.Character.Enemy
+namespace PirateGame.AI.Enemy
 {
     public class EnemyShooterAI : EnemyAI
     {

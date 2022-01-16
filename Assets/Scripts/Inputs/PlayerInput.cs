@@ -1,4 +1,4 @@
-using PirateGame.Character;
+using PirateGame.Movement;
 using UnityEngine;
 
 namespace PirateGame.Inputs

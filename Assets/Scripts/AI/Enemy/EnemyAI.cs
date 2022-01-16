@@ -1,16 +1,17 @@
+using PirateGame.Movement;
 using UnityEngine;
 
-namespace PirateGame.Character.Enemy
+namespace PirateGame.AI.Enemy
 {
     public abstract class EnemyAI : MonoBehaviour
     {
         [SerializeField] private CharacterMovementEvent _onEnemyMoved;
 
-        protected EnemyTarget target;
+        protected Target target;
 
         private void Awake()
         {
-            target = FindObjectOfType<EnemyTarget>();
+            target = FindObjectOfType<Target>();
         }
 
         private void Update()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PirateGame.Character.Enemy
+namespace PirateGame.AI
 {
     public class PatrolPath : MonoBehaviour
     {

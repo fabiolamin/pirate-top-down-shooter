@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PirateGame.AI
+namespace PirateGame.AI.Path
 {
     public class Target : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using PirateGame.Data.AI;
 using System.Linq;
 using UnityEngine;
 
-namespace PirateGame.AI.Path
+namespace PirateGame.AI.Navigation
 {
     public class WaypointSpawner : MonoBehaviour
     {

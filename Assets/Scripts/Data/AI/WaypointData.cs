@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using PirateGame.AI.Path;
+using PirateGame.AI.Navigation;
 
 namespace PirateGame.Data.AI
 {

@@ -1,7 +1,7 @@
 using PirateGame.Movement;
 using UnityEngine;
 
-namespace PirateGame.AI.Path
+namespace PirateGame.AI.Navigation
 {
     public abstract class AIAgent : MonoBehaviour
     {

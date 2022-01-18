@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PirateGame.AI.Path
+namespace PirateGame.AI.Navigation
 {
     public class Waypoint : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using PirateGame.AI.Path;
+using PirateGame.AI.Navigation;
 using UnityEngine;
 
 namespace PirateGame.AI.Enemy

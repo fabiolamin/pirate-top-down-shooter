@@ -14,7 +14,7 @@ namespace PirateGame.AI.Navigation
         public PathFinder PathFinder { get { return _pathFinder; } }
         public Collider2D Collider { get { return _collider; } }
 
-        private void Update()
+        protected void Update()
         {
             Move();
         }
@@ -48,11 +48,11 @@ namespace PirateGame.AI.Navigation
             if (PathFinder.IsPathComplete(Collider))
             {
                 Waypoint startingWaypoint = PathFinder.WaypointData.GetStartingWaypoint(Collider);
-                PathFinder.GetReadyToFindNewPath(startingWaypoint, GetTarget());
+                PathFinder.GetReadyToFindNewPath(startingWaypoint, GetDestination());
             }
         }
 
-        protected abstract Transform GetTarget();
+        protected abstract Transform GetDestination();
         public abstract void StartAIMovement();
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PirateGame.AI.Navigation
+namespace PirateGame.AI.Enemy
 {
     public class Target : MonoBehaviour
     {

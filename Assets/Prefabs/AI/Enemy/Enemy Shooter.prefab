@@ -77,6 +77,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dea66ac04ec30f41ae105b6c31e6d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &9186312705470394145 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7178345916995176710, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+  m_PrefabInstance: {fileID: 2081451550494418471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8932744181524838708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7428043998949695251, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+  m_PrefabInstance: {fileID: 2081451550494418471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fa3fb8deb1a9c4ba4f3825dc1e8c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3716113323702519527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be92ff9f35e61184f82363bbe34f0b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pathFinder: {fileID: 8932744181524838708}
   _onEnemyMoved:
     m_PersistentCalls:
       m_Calls:
@@ -104,5 +121,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _waypoints: []
-  _waypointDistance: 1
+  _collider: {fileID: 9186312705470394145}

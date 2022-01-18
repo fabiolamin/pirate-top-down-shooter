@@ -106,11 +106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathFinder: {fileID: 8932744181524838708}
-  _onEnemyMoved:
+  _onAgentMoved:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6923807523244848007}
-        m_TargetAssemblyTypeName: PirateGame.Character.CharacterMovement, Assembly-CSharp
+        m_TargetAssemblyTypeName: PirateGame.Movement.CharacterMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathFinder: {fileID: 6520962725717458300}
-  _onEnemyMoved:
+  _onAgentMoved:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4728261532182755279}

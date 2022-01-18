@@ -6,6 +6,8 @@ namespace PirateGame.Combat
     {
         [SerializeField] private Rigidbody2D _rigidbody;
 
+        public float Damage { get; set; }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             gameObject.SetActive(false);

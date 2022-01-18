@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2788359563114128140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.335, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.33500004, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
-  m_Father: {fileID: 8004354291668585295}
-  m_RootOrder: 4
+  m_Father: {fileID: 7532020900758300498}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4442681558312984342
 GameObject:
@@ -57,9 +57,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5173111360964021205}
+  - {fileID: 1880853955169654551}
+  - {fileID: 5417745262385570835}
   m_Father: {fileID: 8004354291668585295}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6320859217100898873
 MonoBehaviour:
@@ -79,6 +82,7 @@ MonoBehaviour:
   - {fileID: 1880853955169654551}
   - {fileID: 5417745262385570835}
   _shootingForce: 12
+  _damage: 5
 --- !u!1 &5406716241099889526
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,12 +106,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5406716241099889526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9000001, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
-  m_Father: {fileID: 8004354291668585295}
-  m_RootOrder: 2
+  m_Father: {fileID: 8740895247900564461}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6703449558835096568
 GameObject:
@@ -132,12 +136,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6703449558835096568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.208, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.20799994, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
-  m_Father: {fileID: 8004354291668585295}
-  m_RootOrder: 6
+  m_Father: {fileID: 7532020900758300498}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6735263329252313952
 GameObject:
@@ -166,7 +170,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8350896167970778478}
   m_Father: {fileID: 8004354291668585295}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -186,6 +191,7 @@ MonoBehaviour:
   _bulletOrigins:
   - {fileID: 8350896167970778478}
   _shootingForce: 25
+  _damage: 5
 --- !u!1 &8837127312450742523
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,12 +215,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8837127312450742523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.049, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.048999786, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
-  m_Father: {fileID: 8004354291668585295}
-  m_RootOrder: 5
+  m_Father: {fileID: 7532020900758300498}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3092698218391758896
 PrefabInstance:
@@ -337,7 +343,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onShooting1Triggered:
+  _onFire1ButtonTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6545049948201547905}
@@ -352,7 +358,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onShooting2Triggered:
+  _onFire2ButtonTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6320859217100898873}
@@ -367,6 +373,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _shootingInputDelay: 2
 --- !u!114 &7975307836336490591
 MonoBehaviour:
   m_ObjectHideFlags: 0

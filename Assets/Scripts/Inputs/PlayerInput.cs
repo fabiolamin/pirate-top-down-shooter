@@ -6,9 +6,13 @@ namespace PirateGame.Inputs
 {
     public class PlayerInput : MonoBehaviour
     {
+        private float _timeSinceLastShootingInput = 0f;
+        private bool _canShootingInputBeTriggered = true;
+
         [SerializeField] private CharacterMovementEvent _onPlayerMoved;
-        [SerializeField] private ShootingTriggerEvent _onShooting1Triggered;
-        [SerializeField] private ShootingTriggerEvent _onShooting2Triggered;
+        [SerializeField] private ShootingTriggerEvent _onFire1ButtonTriggered;
+        [SerializeField] private ShootingTriggerEvent _onFire2ButtonTriggered;
+        [SerializeField] private float _shootingInputDelay = 2f;
 
         private void Update()
         {
@@ -24,15 +28,36 @@ namespace PirateGame.Inputs
 
         private void GetAttackInput()
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _onShooting1Triggered.Invoke(transform.right);
-            }
+            CheckAttackInput();
 
-            if (Input.GetButtonDown("Fire2"))
+            if (_canShootingInputBeTriggered)
             {
-                _onShooting2Triggered.Invoke(transform.up);
-                _onShooting2Triggered.Invoke(-transform.up);
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    _onFire1ButtonTriggered.Invoke(transform.right);
+                    _canShootingInputBeTriggered = false;
+                }
+
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    _onFire2ButtonTriggered.Invoke(transform.up);
+                    _onFire2ButtonTriggered.Invoke(-transform.up);
+                    _canShootingInputBeTriggered = false;
+                }
+            }
+        }
+
+        private void CheckAttackInput()
+        {
+            if (!_canShootingInputBeTriggered)
+            {
+                _timeSinceLastShootingInput += Time.deltaTime;
+
+                if (_timeSinceLastShootingInput >= _shootingInputDelay)
+                {
+                    _canShootingInputBeTriggered = true;
+                    _timeSinceLastShootingInput = 0f;
+                }
             }
         }
     }

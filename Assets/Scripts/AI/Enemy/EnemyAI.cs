@@ -7,7 +7,7 @@ namespace PirateGame.AI.Enemy
     {
         private float _timeSinceLastAttack = 0f;
 
-        [SerializeField] private float _attackCoolDown = 3f;
+        [SerializeField] private float _attackReloading = 3f;
 
         protected Target target;
         protected bool isReadyToAttackPlayer = false;
@@ -29,7 +29,7 @@ namespace PirateGame.AI.Enemy
             {
                 _timeSinceLastAttack += Time.deltaTime;
 
-                if (_timeSinceLastAttack >= _attackCoolDown)
+                if (_timeSinceLastAttack >= _attackReloading)
                 {
                     AttackTarget();
                     isReadyToAttackPlayer = false;

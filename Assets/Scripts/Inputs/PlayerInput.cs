@@ -12,10 +12,19 @@ namespace PirateGame.Inputs
 
         private void Update()
         {
+            GetMovementInput();
+            GetAttackInput();
+        }
+
+        private void GetMovementInput()
+        {
             Vector2 newPos = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             _onPlayerMoved.Invoke(newPos);
+        }
 
-            if(Input.GetButtonDown("Fire1"))
+        private void GetAttackInput()
+        {
+            if (Input.GetButtonDown("Fire1"))
             {
                 _onShooting1Triggered.Invoke(transform.right);
             }

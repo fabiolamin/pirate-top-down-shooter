@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7532020900758300498}
   - component: {fileID: 6320859217100898873}
+  - component: {fileID: 12683756989329451}
   m_Layer: 6
   m_Name: Side Shooting
   m_TagString: Untagged
@@ -76,13 +77,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6cf1d6f375ca347a0c8a9d22f73159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 1609707608961965625, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _objectPooling: {fileID: 12683756989329451}
   _bulletOrigins:
   - {fileID: 5173111360964021205}
   - {fileID: 1880853955169654551}
   - {fileID: 5417745262385570835}
   _shootingForce: 12
   _damage: 5
+--- !u!114 &12683756989329451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442681558312984342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866aab9c5a515d44ba9d43fc39495042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 5563732832082498042, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _amount: 10
 --- !u!1 &5406716241099889526
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740895247900564461}
   - component: {fileID: 6545049948201547905}
+  - component: {fileID: 1515985962293085017}
   m_Layer: 6
   m_Name: Frontal Shooting
   m_TagString: Untagged
@@ -187,11 +203,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6cf1d6f375ca347a0c8a9d22f73159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 1609707608961965625, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _objectPooling: {fileID: 1515985962293085017}
   _bulletOrigins:
   - {fileID: 8350896167970778478}
   _shootingForce: 25
   _damage: 5
+--- !u!114 &1515985962293085017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735263329252313952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866aab9c5a515d44ba9d43fc39495042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 5563732832082498042, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _amount: 10
 --- !u!1 &8837127312450742523
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
+using PirateGame.Utils;
 using UnityEngine;
 
 namespace PirateGame.Combat
 {
     public class ShipShooting : MonoBehaviour
     {
-        [SerializeField] private Bullet _bulletPrefab;
+        [SerializeField] private ObjectPooling _objectPooling;
         [SerializeField] private Transform[] _bulletOrigins;
         [SerializeField] private float _shootingForce = 5f;
         [SerializeField] private float _damage = 5f;
@@ -13,7 +14,7 @@ namespace PirateGame.Combat
         {
             foreach (Transform origin in _bulletOrigins)
             {
-                Bullet bullet = Instantiate(_bulletPrefab);
+                Bullet bullet = _objectPooling.GetObject().GetComponent<Bullet>();
                 bullet.transform.position = origin.position;
                 bullet.gameObject.layer = gameObject.layer;
                 bullet.Damage = _damage;

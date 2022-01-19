@@ -130,3 +130,4 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _collider: {fileID: 6842146724382927721}
+  shipCombatData: {fileID: 11400000, guid: 25eed0e2876896d49953eaa425d1ca2a, type: 2}

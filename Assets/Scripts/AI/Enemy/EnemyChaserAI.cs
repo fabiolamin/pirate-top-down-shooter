@@ -19,7 +19,7 @@ namespace PirateGame.AI.Enemy
 
         protected override void AttackTarget()
         {
-            Debug.Log("BOOM!!!");
+            Debug.Log("BOOM!!! " + shipCombatData.Damage);
         }
 
         protected override Transform GetDestination()

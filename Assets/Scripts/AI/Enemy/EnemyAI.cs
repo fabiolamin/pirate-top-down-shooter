@@ -1,4 +1,5 @@
 using PirateGame.AI.Navigation;
+using PirateGame.Data.Combat;
 using UnityEngine;
 
 namespace PirateGame.AI.Enemy
@@ -7,7 +8,7 @@ namespace PirateGame.AI.Enemy
     {
         private float _timeSinceLastAttack = 0f;
 
-        [SerializeField] private float _attackReloading = 3f;
+        [SerializeField] protected ShipCombatData shipCombatData;
 
         protected Target target;
         protected bool isReadyToAttackPlayer = false;
@@ -29,7 +30,7 @@ namespace PirateGame.AI.Enemy
             {
                 _timeSinceLastAttack += Time.deltaTime;
 
-                if (_timeSinceLastAttack >= _attackReloading)
+                if (_timeSinceLastAttack >= shipCombatData.ReloadingTime)
                 {
                     AttackTarget();
                     isReadyToAttackPlayer = false;

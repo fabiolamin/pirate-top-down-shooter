@@ -6,7 +6,6 @@ namespace PirateGame.AI.Enemy
     public class EnemyShooterAI : EnemyAI
     {
         [SerializeField] private ShootingTriggerEvent _onShootingTriggered;
-        [SerializeField] private float _minDistanceToShoot = 10f;
 
         protected void Update()
         {
@@ -20,7 +19,7 @@ namespace PirateGame.AI.Enemy
 
         private bool IsTargetNear()
         {
-            return Vector2.Distance(transform.position, target.transform.position) <= _minDistanceToShoot;
+            return Vector2.Distance(transform.position, target.transform.position) <= shipCombatData.MinShootingDistance;
         }
 
         protected override Transform GetDestination()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145273133697305041}
   - component: {fileID: 5715721253998503290}
+  - component: {fileID: 903771415758167964}
   m_Layer: 7
   m_Name: Shooting Origin
   m_TagString: Untagged
@@ -43,10 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6cf1d6f375ca347a0c8a9d22f73159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 1609707608961965625, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _objectPooling: {fileID: 903771415758167964}
   _bulletOrigins:
   - {fileID: 145273133697305041}
-  _shootingForce: 12
+  _shipCombatData: {fileID: 11400000, guid: 04435a731d889d84c9d6fb024ed7840b, type: 2}
+--- !u!114 &903771415758167964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451669156276875379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866aab9c5a515d44ba9d43fc39495042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 5563732832082498042, guid: bd53f4a56dd880644b35ed772a68db05, type: 3}
+  _amount: 10
 --- !u!1001 &2081451550494418471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,6 +189,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _collider: {fileID: 9186312705470394145}
+  shipCombatData: {fileID: 11400000, guid: 04435a731d889d84c9d6fb024ed7840b, type: 2}
   _onShootingTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -189,4 +205,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _minDistanceToShoot: 10

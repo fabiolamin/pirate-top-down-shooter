@@ -1,4 +1,5 @@
 using PirateGame.Combat;
+using PirateGame.Data.Combat;
 using PirateGame.Movement;
 using UnityEngine;
 
@@ -12,8 +13,7 @@ namespace PirateGame.Inputs
         [SerializeField] private CharacterMovementEvent _onPlayerMoved;
         [SerializeField] private ShootingTriggerEvent _onFire1ButtonTriggered;
         [SerializeField] private ShootingTriggerEvent _onFire2ButtonTriggered;
-        [SerializeField] private float _shootingInputDelay = 2f;
-
+        [SerializeField] private ShipCombatData _shipCombatData;
         private void Update()
         {
             GetMovementInput();
@@ -53,7 +53,7 @@ namespace PirateGame.Inputs
             {
                 _timeSinceLastShootingInput += Time.deltaTime;
 
-                if (_timeSinceLastShootingInput >= _shootingInputDelay)
+                if (_timeSinceLastShootingInput >= _shipCombatData.ReloadingTime)
                 {
                     _canShootingInputBeTriggered = true;
                     _timeSinceLastShootingInput = 0f;

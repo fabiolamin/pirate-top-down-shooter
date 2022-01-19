@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.AI.Enemy
 {
     public class EnemyChaserAI : EnemyAI
     {
+        [SerializeField] private UnityEvent _onTargetHitted;
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (CanHitTarget(collision))
@@ -19,7 +21,8 @@ namespace PirateGame.AI.Enemy
 
         protected override void AttackTarget()
         {
-            Debug.Log("BOOM!!! " + shipCombatData.Damage);
+            targetHealth.GetDamage(shipCombatData.Damage);
+            _onTargetHitted.Invoke();
         }
 
         protected override Transform GetDestination()

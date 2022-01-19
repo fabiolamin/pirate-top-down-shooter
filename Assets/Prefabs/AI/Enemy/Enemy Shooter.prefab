@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 903771415758167964}
   m_Layer: 7
   m_Name: Shooting Origin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,6 +69,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _shipHealthData
+      value: 
+      objectReference: {fileID: 11400000, guid: 545abb0f46e14394ba74e8cc26fdb6b1, type: 2}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5715721253998503290}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetShootingModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PirateGame.Combat.ShipShooting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212609498109987864, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9003966046583412129, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: m_Name
       value: Enemy Shooter
@@ -120,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 9003966047751533380, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7b902ee8f7aee6d42a2cedcf546344d7, type: 3}
+      objectReference: {fileID: 21300000, guid: 99bf5bc6128a0a5419432684b6be2461, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
 --- !u!1 &6923807523244848006 stripped

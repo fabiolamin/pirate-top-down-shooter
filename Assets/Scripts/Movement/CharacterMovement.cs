@@ -4,12 +4,14 @@ namespace PirateGame.Movement
 {
     public class CharacterMovement : MonoBehaviour
     {
+        private int _movementModifier = 1; 
+
         [SerializeField] private float _movementSpeed = 10f;
         [SerializeField] private float _rotationSpeed = 5f;
 
         public void Move(Vector2 newPosition)
         {
-            float speed = _movementSpeed * Time.deltaTime;
+            float speed = _movementSpeed * Time.deltaTime * _movementModifier;
             transform.position += new Vector3(newPosition.x * speed, newPosition.y * speed, transform.position.z);
 
             Rotate(newPosition);
@@ -21,8 +23,14 @@ namespace PirateGame.Movement
             {
                 float zDegree = Mathf.Atan2(newPosition.y, newPosition.x) * Mathf.Rad2Deg;
                 Quaternion newRotation = Quaternion.Euler(0f, 0f, zDegree);
-                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, _rotationSpeed * Time.deltaTime);
+                float speed = _rotationSpeed * Time.deltaTime * _movementModifier;
+                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, speed);
             }
+        }
+
+        public void SetMovementModifier(float value)
+        {
+            _movementModifier = value > 0 ? 1 : 0;
         }
     }
 }

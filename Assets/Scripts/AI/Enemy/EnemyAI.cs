@@ -1,5 +1,6 @@
 using PirateGame.AI.Navigation;
 using PirateGame.Data.Combat;
+using PirateGame.Health;
 using UnityEngine;
 
 namespace PirateGame.AI.Enemy
@@ -11,11 +12,13 @@ namespace PirateGame.AI.Enemy
         [SerializeField] protected ShipCombatData shipCombatData;
 
         protected Target target;
+        protected ShipHealth targetHealth;
         protected bool isReadyToAttackPlayer = false;
 
         private void Awake()
         {
             target = FindObjectOfType<Target>();
+            targetHealth = target.GetComponent<ShipHealth>();
         }
 
         protected void Update()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using PirateGame.Health;
 
 namespace PirateGame.Combat
 {
@@ -8,9 +9,23 @@ namespace PirateGame.Combat
 
         public float Damage { get; set; }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            gameObject.SetActive(false);
+            if (collision.gameObject.tag != gameObject.tag)
+            {
+                HitTarget(collision.gameObject);
+                gameObject.SetActive(false);
+            }
+        }
+
+        private void HitTarget(GameObject target)
+        {
+            ShipHealth shipHealth = target.GetComponent<ShipHealth>();
+
+            if (shipHealth != null)
+            {
+                shipHealth.GetDamage(Damage);
+            }
         }
 
         public void MoveTowardsTo(Vector2 direction)

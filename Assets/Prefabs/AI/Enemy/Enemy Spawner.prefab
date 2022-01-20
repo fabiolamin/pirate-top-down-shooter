@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad9980c3827e344482e160d710aa86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpawnData: {fileID: 11400000, guid: 5e1152c4c9c7fd54c9dbf316804901bb, type: 2}
+  _gameSessionData: {fileID: 11400000, guid: b2189741471f5ee4b973f6e5b1b18722, type: 2}

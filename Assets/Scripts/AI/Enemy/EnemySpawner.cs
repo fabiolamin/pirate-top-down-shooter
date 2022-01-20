@@ -1,4 +1,4 @@
-using PirateGame.Data.AI;
+using PirateGame.Data.Game;
 using System.Collections;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ namespace PirateGame.AI.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private EnemySpawnData _enemySpawnData;
+        [SerializeField] private GameSessionData _gameSessionData;
 
         public void GetReadyToSpawnEnemy(EnemyAI enemy)
         {
@@ -15,7 +15,7 @@ namespace PirateGame.AI.Enemy
 
         private IEnumerator SpawnEnemy(EnemyAI enemy)
         {
-            yield return new WaitForSeconds(_enemySpawnData.SpawnTime);
+            yield return new WaitForSeconds(_gameSessionData.EnemySpawnTime);
             enemy.gameObject.SetActive(true);
             enemy.transform.position = enemy.SpawnOrigin;
         }

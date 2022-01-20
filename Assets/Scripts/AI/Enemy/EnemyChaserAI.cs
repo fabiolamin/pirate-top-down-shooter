@@ -5,7 +5,14 @@ namespace PirateGame.AI.Enemy
 {
     public class EnemyChaserAI : EnemyAI
     {
+        private bool _hasAttacked = false;
         [SerializeField] private UnityEvent _onTargetHitted;
+
+        private void OnEnable()
+        {
+            _hasAttacked = false;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (CanHitTarget(collision))
@@ -21,8 +28,12 @@ namespace PirateGame.AI.Enemy
 
         protected override void AttackTarget()
         {
-            targetHealth.GetDamage(shipCombatData.Damage);
-            _onTargetHitted.Invoke();
+            if (!_hasAttacked)
+            {
+                _hasAttacked = true;
+                targetHealth.GetDamage(shipCombatData.Damage);
+                _onTargetHitted.Invoke();
+            }
         }
 
         protected override Transform GetDestination()

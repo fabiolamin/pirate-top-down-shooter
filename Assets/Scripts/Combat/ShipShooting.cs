@@ -1,6 +1,7 @@
 using PirateGame.Data.Combat;
 using PirateGame.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.Combat
 {
@@ -11,10 +12,13 @@ namespace PirateGame.Combat
         [SerializeField] private ObjectPooling _objectPooling;
         [SerializeField] private Transform[] _bulletOrigins;
         [SerializeField] ShipCombatData _shipCombatData;
+        [SerializeField] private UnityEvent _onShipShot;
         public void Shoot(Vector2 direction)
         {
-            if(_canShoot)
+            if (_canShoot)
             {
+                _onShipShot.Invoke();
+
                 foreach (Transform origin in _bulletOrigins)
                 {
                     Bullet bullet = _objectPooling.GetObject().GetComponent<Bullet>();

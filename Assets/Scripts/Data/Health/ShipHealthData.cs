@@ -8,6 +8,7 @@ namespace PirateGame.Data.Health
     {
         public float CurrentHealth;
         public Sprite State;
+        public bool IsCriticalState;
     }
 
     [CreateAssetMenu(fileName = "Ship Health Data", menuName = "Health/new Ship Health Data")]
@@ -23,9 +24,9 @@ namespace PirateGame.Data.Health
 
         public float DeathDelay { get { return _deathDelay; } }
 
-        public Sprite GetCurrentState(float currentHealth)
+        public ShipState GetCurrentState(float currentHealth)
         {
-            return States.FirstOrDefault(s => s.CurrentHealth >= currentHealth).State;
+            return States.FirstOrDefault(s => s.CurrentHealth >= currentHealth);
         }
     }
 }

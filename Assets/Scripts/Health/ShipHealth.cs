@@ -13,9 +13,9 @@ namespace PirateGame.Health
 
         [SerializeField] private ShipHealthData _shipHealthData;
         [SerializeField] private SpriteRenderer _shipSpriteRenderer;
-        [SerializeField] private UnityEvent _onDamaged;
         [SerializeField] private UnityEvent _onDied;
         [SerializeField] private FloatEvent _onHealthUpdated;
+        [SerializeField] private BoolEvent _onCriticalState;
 
         private void OnEnable()
         {
@@ -29,7 +29,6 @@ namespace PirateGame.Health
             if (_isAlive)
             {
                 _currentHealth = Mathf.Clamp(_currentHealth - damage, 0f, _shipHealthData.MaxHealth);
-                _onDamaged.Invoke();
                 UpdateHealth();
                 CheckHealth();
             }
@@ -38,13 +37,16 @@ namespace PirateGame.Health
         private void UpdateHealth()
         {
             _onHealthUpdated.Invoke(_currentHealth / _shipHealthData.MaxHealth);
-            _shipSpriteRenderer.sprite = _shipHealthData.GetCurrentState(_currentHealth);
+            ShipState shipState = _shipHealthData.GetCurrentState(_currentHealth);
+            _shipSpriteRenderer.sprite = shipState.State;
+            _onCriticalState.Invoke(shipState.IsCriticalState);
         }
 
         private void CheckHealth()
         {
             if (_currentHealth <= 0f)
             {
+                _isAlive = false;
                 _onDied.Invoke();
                 StartCoroutine(SetDeath());
             }

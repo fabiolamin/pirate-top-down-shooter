@@ -16,9 +16,14 @@ MonoBehaviour:
   _shipStates:
   - CurrentHealth: 100
     State: {fileID: 21300000, guid: 65ce82cb0b67e5a49b4e503a2b9b6557, type: 3}
+    IsCriticalState: 0
   - CurrentHealth: 70
     State: {fileID: 21300000, guid: dd6e117fac60667409f4831dd4513aa7, type: 3}
+    IsCriticalState: 0
   - CurrentHealth: 40
     State: {fileID: 21300000, guid: 9d745a19f1e8d504a81a45205e987063, type: 3}
+    IsCriticalState: 1
   - CurrentHealth: 0
     State: {fileID: 21300000, guid: 744a35bd80191d541b061ca46a936af2, type: 3}
+    IsCriticalState: 0
+  _deathDelay: 3

@@ -5,27 +5,27 @@ using System.Collections;
 namespace PirateGame.Combat
 {
     [System.Serializable]
-    public struct Pirate
+    public struct ShipComponent
     {
         public Transform Transform;
-        public Vector2 EscapingDirection;
-        public float EscapingSpeed;
+        public Vector2 Direction;
+        public float Speed;
     }
 
     public class ShipCriticalStateAnimation : MonoBehaviour
     {
-        private bool _hasCrewLeft = false;
+        private bool _haveComponentsLeft = false;
 
         [SerializeField] private Animator _animator;
-        [SerializeField] private Pirate[] _pirates;
-        [SerializeField] private float _crewEscapingDuration = 3f;
+        [SerializeField] private ShipComponent[] _shipComponents;
+        [SerializeField] private float _componentsDuration = 3f;
 
         private void OnEnable()
         {
-            _pirates.ToList().ForEach(p => p.Transform.gameObject.SetActive(false));
-            _pirates.ToList().ForEach(p => p.Transform.position = transform.position);
-            _pirates.ToList().ForEach(p => p.Transform.SetParent(transform));
-            _hasCrewLeft = false;
+            _shipComponents.ToList().ForEach(c => c.Transform.gameObject.SetActive(false));
+            _shipComponents.ToList().ForEach(c => c.Transform.position = transform.position);
+            _shipComponents.ToList().ForEach(c => c.Transform.SetParent(transform));
+            _haveComponentsLeft = false;
         }
 
         private void Update()
@@ -35,12 +35,12 @@ namespace PirateGame.Combat
 
         private void MovePirates()
         {
-            if (_hasCrewLeft)
+            if (_haveComponentsLeft)
             {
-                foreach (Pirate pirate in _pirates)
+                foreach (ShipComponent component in _shipComponents)
                 {
-                    pirate.Transform.SetParent(null);
-                    pirate.Transform.Translate(pirate.EscapingDirection * pirate.EscapingSpeed * Time.deltaTime);
+                    component.Transform.SetParent(null);
+                    component.Transform.Translate(component.Direction * component.Speed * Time.deltaTime);
                 }
             }
         }
@@ -53,18 +53,18 @@ namespace PirateGame.Combat
 
         private void CheckCrewEscaping(bool isCriticalState)
         {
-            if (isCriticalState && !_hasCrewLeft)
+            if (isCriticalState && !_haveComponentsLeft)
             {
-                _pirates.ToList().ForEach(p => p.Transform.gameObject.SetActive(true));
-                _hasCrewLeft = true;
+                _shipComponents.ToList().ForEach(p => p.Transform.gameObject.SetActive(true));
+                _haveComponentsLeft = true;
                 StartCoroutine(SetCrewEscapingDuration());
             }
         }
 
         private IEnumerator SetCrewEscapingDuration()
         {
-            yield return new WaitForSeconds(_crewEscapingDuration);
-            _pirates.ToList().ForEach(p => p.Transform.gameObject.SetActive(false));
+            yield return new WaitForSeconds(_componentsDuration);
+            _shipComponents.ToList().ForEach(p => p.Transform.gameObject.SetActive(false));
         }
     }
 }

@@ -7,6 +7,7 @@ namespace PirateGame.Health
 {
     public class ShipHealth : MonoBehaviour
     {
+        private GameObject _lastDamageSource = null;
         private float _currentHealth = 0f;
         private bool _isAlive = true;
 
@@ -16,6 +17,8 @@ namespace PirateGame.Health
         [SerializeField] private UnityEvent<float> _onHealthUpdated;
         [SerializeField] private UnityEvent<bool> _onCriticalState;
         [SerializeField] private UnityEvent _onDisabled;
+        [SerializeField] private UnityEvent<GameObject> _onLastDamage;
+
         private void OnEnable()
         {
             _isAlive = true;
@@ -23,10 +26,11 @@ namespace PirateGame.Health
             UpdateHealth();
         }
 
-        public void GetDamage(float damage)
+        public void GetDamage(float damage, GameObject source)
         {
             if (_isAlive)
             {
+                _lastDamageSource = source;
                 _currentHealth = Mathf.Clamp(_currentHealth - damage, 0f, _shipHealthData.MaxHealth);
                 UpdateHealth();
                 CheckHealth();
@@ -46,6 +50,7 @@ namespace PirateGame.Health
             if (_currentHealth <= 0f)
             {
                 _isAlive = false;
+                _onLastDamage.Invoke(_lastDamageSource);
                 _onDied.Invoke();
                 StartCoroutine(SetDeath());
             }
@@ -58,9 +63,9 @@ namespace PirateGame.Health
             gameObject.SetActive(false);
         }
 
-        public void DieHimself()
+        public void TriggerOwnDeath()
         {
-            GetDamage(_shipHealthData.MaxHealth);
+            GetDamage(_shipHealthData.MaxHealth, null);
         }
     }
 }

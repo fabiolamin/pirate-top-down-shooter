@@ -24,7 +24,7 @@ namespace PirateGame.Combat
 
             if (shipHealth != null)
             {
-                shipHealth.GetDamage(Damage);
+                shipHealth.GetDamage(Damage, gameObject);
             }
         }
 

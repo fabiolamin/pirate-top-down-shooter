@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ddf79fa90bfda5040a88779836470625, type: 2}
     - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDied.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7050949094049065473}
@@ -167,7 +171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4523170512505252830}
         m_TargetAssemblyTypeName: PirateGame.Health.ShipHealth, Assembly-CSharp
-        m_MethodName: DieHimself
+        m_MethodName: TriggerOwnDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

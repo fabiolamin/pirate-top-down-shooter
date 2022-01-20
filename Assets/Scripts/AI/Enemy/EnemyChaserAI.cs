@@ -31,7 +31,7 @@ namespace PirateGame.AI.Enemy
             if (!_hasAttacked)
             {
                 _hasAttacked = true;
-                targetHealth.GetDamage(shipCombatData.Damage);
+                targetHealth.GetDamage(shipCombatData.Damage, gameObject);
                 _onTargetHitted.Invoke();
             }
         }

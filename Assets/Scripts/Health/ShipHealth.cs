@@ -16,7 +16,7 @@ namespace PirateGame.Health
         [SerializeField] private UnityEvent _onDied;
         [SerializeField] private FloatEvent _onHealthUpdated;
         [SerializeField] private BoolEvent _onCriticalState;
-
+        [SerializeField] private UnityEvent _onDisabled;
         private void OnEnable()
         {
             _isAlive = true;
@@ -55,6 +55,7 @@ namespace PirateGame.Health
         private IEnumerator SetDeath()
         {
             yield return new WaitForSeconds(_shipHealthData.DeathDelay);
+            _onDisabled.Invoke();
             gameObject.SetActive(false);
         }
 

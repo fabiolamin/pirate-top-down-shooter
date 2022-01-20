@@ -11,6 +11,22 @@ PrefabInstance:
       propertyPath: _shipHealthData
       value: 
       objectReference: {fileID: 11400000, guid: ddf79fa90bfda5040a88779836470625, type: 2}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7050949094049065473}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PirateGame.AI.Enemy.EnemyAI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9003966046583412128, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: _movementSpeed
       value: 2

@@ -1,7 +1,7 @@
 using PirateGame.Combat;
 using PirateGame.Data.Combat;
-using PirateGame.Movement;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.Inputs
 {
@@ -10,7 +10,7 @@ namespace PirateGame.Inputs
         private float _timeSinceLastShootingInput = 0f;
         private bool _canShootingInputBeTriggered = true;
 
-        [SerializeField] private CharacterMovementEvent _onPlayerMoved;
+        [SerializeField] private UnityEvent<Vector2> _onPlayerMoved;
         [SerializeField] private ShootingTriggerEvent _onFire1ButtonTriggered;
         [SerializeField] private ShootingTriggerEvent _onFire2ButtonTriggered;
         [SerializeField] private ShipCombatData _shipCombatData;

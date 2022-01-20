@@ -1,12 +1,12 @@
-using PirateGame.Movement;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.AI.Navigation
 {
     public abstract class AIAgent : MonoBehaviour
     {
         [SerializeField] private PathFinder _pathFinder;
-        [SerializeField] private CharacterMovementEvent _onAgentMoved;
+        [SerializeField] private UnityEvent<Vector2> _onAgentMoved;
         [SerializeField] private Collider2D _collider;
 
         protected bool isReadyToMove = false;

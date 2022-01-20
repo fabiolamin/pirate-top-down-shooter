@@ -1,5 +1,4 @@
 using PirateGame.Data.Health;
-using PirateGame.Utils;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,8 +13,8 @@ namespace PirateGame.Health
         [SerializeField] private ShipHealthData _shipHealthData;
         [SerializeField] private SpriteRenderer _shipSpriteRenderer;
         [SerializeField] private UnityEvent _onDied;
-        [SerializeField] private FloatEvent _onHealthUpdated;
-        [SerializeField] private BoolEvent _onCriticalState;
+        [SerializeField] private UnityEvent<float> _onHealthUpdated;
+        [SerializeField] private UnityEvent<bool> _onCriticalState;
         [SerializeField] private UnityEvent _onDisabled;
         private void OnEnable()
         {

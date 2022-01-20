@@ -9,11 +9,6 @@ namespace PirateGame.UI
         [SerializeField] private ScoreData _scoreData;
         [SerializeField] private Text _scoreText;
 
-        private void Awake()
-        {
-            _scoreData.ResetScore();
-        }
-
         public void UpdateScoreDisplay()
         {
             _scoreText.text = _scoreData.Score.ToString();

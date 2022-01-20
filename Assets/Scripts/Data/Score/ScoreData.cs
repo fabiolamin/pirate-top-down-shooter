@@ -5,9 +5,9 @@ namespace PirateGame.Data.Score
     [CreateAssetMenu(fileName = "Score Data", menuName = "Score/new Score Data")]
     public class ScoreData : ScriptableObject
     {
-        public int Score { get; private set; } = 0;
+        public int Score { get; private set; }
 
-        public void AddPonints(int points)
+        public void AddPoints(int points)
         {
             Score += points;
         }

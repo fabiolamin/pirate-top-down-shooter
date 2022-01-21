@@ -90,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655690968487658975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.43, y: 16.2, z: 0}
+  m_LocalPosition: {x: -17.2, y: 11.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4655690967218912092}
@@ -177,6 +177,30 @@ PrefabInstance:
       propertyPath: _pathOrigin
       value: 
       objectReference: {fileID: 4655690968487658968}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartSpawning
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PirateGame.AI.Enemy.EnemySpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362664652743639672, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
+      propertyPath: _onWaypointsSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6362664652743639673, guid: 2fd9f3ec29b6ba34183ecd80d22714d8, type: 3}
       propertyPath: m_Name
       value: Waypoint Spawner

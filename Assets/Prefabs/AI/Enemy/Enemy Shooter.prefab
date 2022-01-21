@@ -90,6 +90,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 545abb0f46e14394ba74e8cc26fdb6b1, type: 2}
     - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265479523121252785, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: _onHealthUpdated.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}

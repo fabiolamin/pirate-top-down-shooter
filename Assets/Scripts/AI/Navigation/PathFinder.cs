@@ -37,6 +37,7 @@ namespace PirateGame.AI.Navigation
             if (_path.Contains(waypoint))
             {
                 IsReadyToFindNewPath = false;
+                
             }
             else
             {

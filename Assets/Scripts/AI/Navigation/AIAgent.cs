@@ -47,7 +47,7 @@ namespace PirateGame.AI.Navigation
         {
             if (PathFinder.IsPathComplete(Collider))
             {
-                Waypoint startingWaypoint = PathFinder.WaypointData.GetStartingWaypoint(Collider);
+                Waypoint startingWaypoint = PathFinder.WaypointData.GetStartingWaypoint(transform.position);
                 PathFinder.GetReadyToFindNewPath(startingWaypoint, GetDestination());
             }
         }

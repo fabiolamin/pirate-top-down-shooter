@@ -7,7 +7,6 @@ namespace PirateGame.AI.Enemy
 {
     public abstract class EnemyAI : AIAgent
     {
-        private EnemySpawner _enemySpawner;
         private float _timeSinceLastAttack = 0f;
 
         [SerializeField] protected ShipCombatData shipCombatData;
@@ -20,8 +19,6 @@ namespace PirateGame.AI.Enemy
 
         private void Awake()
         {
-            _enemySpawner = FindObjectOfType<EnemySpawner>();
-            SpawnOrigin = transform.position;
             target = FindObjectOfType<Target>();
             targetHealth = target.GetComponent<ShipHealth>();
         }
@@ -49,14 +46,9 @@ namespace PirateGame.AI.Enemy
 
         public override void StartAIMovement()
         {
-            Waypoint startingWaypoint = PathFinder.WaypointData.GetStartingWaypoint(Collider);
+            Waypoint startingWaypoint = PathFinder.WaypointData.GetStartingWaypoint(transform.position);
             PathFinder.GetReadyToFindNewPath(startingWaypoint, GetDestination());
             isReadyToMove = true;
-        }
-
-        public void Spawn()
-        {
-            _enemySpawner.GetReadyToSpawnEnemy(this);
         }
 
         protected abstract void AttackTarget();

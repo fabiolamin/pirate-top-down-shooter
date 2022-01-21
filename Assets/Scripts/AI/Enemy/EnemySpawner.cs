@@ -1,4 +1,5 @@
 using PirateGame.Data.Game;
+using PirateGame.Utils;
 using System.Collections;
 using UnityEngine;
 
@@ -6,25 +7,35 @@ namespace PirateGame.AI.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
+        private int _enemyIndex = 0;
         private float _enemyRespawnTime = 0f;
 
         [SerializeField] private GameSessionData _gameSessionData;
+        [SerializeField] private ObjectPooling[] _enemies;
+        [SerializeField] private Transform[] _spawnLocations;
 
         private void Awake()
         {
-            _enemyRespawnTime = PlayerPrefs.GetFloat(_gameSessionData.EnemyRespawnTimeID);
+            _enemyRespawnTime = PlayerPrefs.GetFloat(_gameSessionData.EnemySpawnTimeID);
         }
 
-        public void GetReadyToSpawnEnemy(EnemyAI enemy)
+        public void StartSpawning()
         {
-            StartCoroutine(SpawnEnemy(enemy));
+            StartCoroutine(SpawnEnemy());
         }
 
-        private IEnumerator SpawnEnemy(EnemyAI enemy)
+        private IEnumerator SpawnEnemy()
         {
-            yield return new WaitForSeconds(_enemyRespawnTime);
-            enemy.gameObject.SetActive(true);
-            enemy.transform.position = enemy.SpawnOrigin;
+            while (true)
+            {
+                yield return new WaitForSeconds(_enemyRespawnTime);
+                _enemyIndex++;
+                _enemyIndex %= _enemies.Length;
+
+                GameObject enemy = _enemies[_enemyIndex].GetObject();
+                enemy.transform.position = _spawnLocations[Random.Range(0, _spawnLocations.Length)].position;
+                enemy.GetComponent<EnemyAI>().StartAIMovement();
+            }
         }
     }
 }

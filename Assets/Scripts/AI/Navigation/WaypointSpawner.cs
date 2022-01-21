@@ -1,19 +1,20 @@
 using PirateGame.Data.AI;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.AI.Navigation
 {
     public class WaypointSpawner : MonoBehaviour
     {
-        private AIAgent[] _agents;
         private Obstacle[] _obstacles;
 
         private int _rows;
         private int _columns;
 
-        [SerializeField] WaypointData _waypointData;
-        [SerializeField] Transform _pathOrigin;
+        [SerializeField] private WaypointData _waypointData;
+        [SerializeField] private Transform _pathOrigin;
+        [SerializeField] private UnityEvent _onWaypointsSpawned;
 
         public bool AreAllWaypointsChecked { get; private set; } = false;
 
@@ -25,7 +26,6 @@ namespace PirateGame.AI.Navigation
 
         private void SetUpWaypoints()
         {
-            _agents = FindObjectsOfType<AIAgent>();
             _waypointData.Clear();
             _obstacles = FindObjectsOfType<Obstacle>();
 
@@ -65,8 +65,8 @@ namespace PirateGame.AI.Navigation
         {
             if(_waypointData.AreAllWaypointsReady())
             {
-                _agents.ToList().ForEach(e => e.StartAIMovement());
                 AreAllWaypointsChecked = true;
+                _onWaypointsSpawned.Invoke();
             }
         }
     }

@@ -20,20 +20,20 @@ namespace PirateGame.Game
         {
             if (!HasAlreadyBeenSaved())
             {
-                UpdateSliders(_gameSessionData.SessionTime, _gameSessionData.EnemyRespawnTime);
+                UpdateSliders(_gameSessionData.SessionTime, _gameSessionData.EnemySpawnTime);
                 SaveOptions();
             }
             else
             {
                 UpdateSliders(PlayerPrefs.GetFloat(_gameSessionData.SessionTimeID) / 60f,
-                PlayerPrefs.GetFloat(_gameSessionData.EnemyRespawnTimeID));
+                PlayerPrefs.GetFloat(_gameSessionData.EnemySpawnTimeID));
             }
         }
 
         private bool HasAlreadyBeenSaved()
         {
             return PlayerPrefs.GetFloat(_gameSessionData.SessionTimeID) != 0 &&
-            PlayerPrefs.GetFloat(_gameSessionData.EnemyRespawnTimeID) != 0;
+            PlayerPrefs.GetFloat(_gameSessionData.EnemySpawnTimeID) != 0;
         }
 
         private void UpdateSliders(float sessionTime, float respawnTime)
@@ -45,7 +45,7 @@ namespace PirateGame.Game
         public void SaveOptions()
         {
             PlayerPrefs.SetFloat(_gameSessionData.SessionTimeID, _sessionTimeSlider.value * 60f);
-            PlayerPrefs.SetFloat(_gameSessionData.EnemyRespawnTimeID, _respawnTimeSlider.value);
+            PlayerPrefs.SetFloat(_gameSessionData.EnemySpawnTimeID, _respawnTimeSlider.value);
         }
     }
 }

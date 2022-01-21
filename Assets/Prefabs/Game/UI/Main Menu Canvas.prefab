@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 7290911726316199091}
   - component: {fileID: 7290911726316199088}
   m_Layer: 5
-  m_Name: Enemy Respawn Slider
+  m_Name: Spawn Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7290911727539395931}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 10
+  m_MaxValue: 60
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 7290911726400979898}
   - component: {fileID: 585131656719261040}
   m_Layer: 5
-  m_Name: Respawn Time Txt
+  m_Name: Spawn Time Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enemy Respawn
+  m_Text: Enemy Spawn
 --- !u!114 &585131656719261040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 7290911726858596264}
   - component: {fileID: 2473705288281093341}
   m_Layer: 5
-  m_Name: Respaw Value Txt
+  m_Name: Spawn Value Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,7 +1526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7290911727128252884}
   m_Layer: 5
-  m_Name: Enemy Respawn
+  m_Name: Enemy Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2457,7 +2457,7 @@ GameObject:
   - component: {fileID: 7290911728111962549}
   - component: {fileID: 355355874415401592}
   m_Layer: 5
-  m_Name: Respaw Value Txt (1)
+  m_Name: Spawn Value Txt (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

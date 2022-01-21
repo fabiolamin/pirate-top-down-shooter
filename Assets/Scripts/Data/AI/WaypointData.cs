@@ -41,9 +41,9 @@ namespace PirateGame.Data.AI
             return waypoints.ElementAt(Random.Range(0, waypoints.Count()));
         }
 
-        public Waypoint GetStartingWaypoint(Collider2D collider)
+        public Waypoint GetStartingWaypoint(Vector2 position)
         {
-            return _waypoints.FirstOrDefault(w => w.BoxCollider2D.IsTouching(collider));
+            return _waypoints.FirstOrDefault(w => Vector2.Distance(w.transform.position, position) <= _maxWaypointDistance);
         }
 
         public bool AreAllWaypointsReady()

@@ -10,16 +10,16 @@ namespace PirateGame.Data.Game
         [SerializeField] private float _sessionTime = 3f;
 
         [Tooltip("Seconds")]
-        [Range(1f, 10f)]
-        [SerializeField] private float _enemyRespawnTime = 5f;
+        [Range(1f, 60f)]
+        [SerializeField] private float _enemySpawnTime = 5f;
 
         [SerializeField] private string _sessionTimeID = "Session";
-        [SerializeField] private string _enemyRespawnTimeID = "EnemyRespawn";
+        [SerializeField] private string _enemySpawnTimeID = "EnemySpawn";
 
         public float SessionTime { get { return _sessionTime; } }
-        public float EnemyRespawnTime { get { return _enemyRespawnTime; } }
+        public float EnemySpawnTime { get { return _enemySpawnTime; } }
         public string SessionTimeID { get { return _sessionTimeID; } }
-        public string EnemyRespawnTimeID { get { return _enemyRespawnTimeID; } }
+        public string EnemySpawnTimeID { get { return _enemySpawnTimeID; } }
     }
 }
 

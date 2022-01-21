@@ -6,10 +6,10 @@ namespace PirateGame.Utils
 {
     public class ObjectPooling : MonoBehaviour
     {
-        private List<GameObject> _pooledObjects = new List<GameObject>();
-
         [SerializeField] private GameObject _objectPrefab;
         [SerializeField] private int _amount = 10;
+
+        public List<GameObject> PooledObjects { get; private set; } = new List<GameObject>();
 
         private void Awake()
         {
@@ -22,17 +22,17 @@ namespace PirateGame.Utils
             {
                 GameObject pooledObject = Instantiate(_objectPrefab);
                 pooledObject.SetActive(false);
-                _pooledObjects.Add(pooledObject);
+                PooledObjects.Add(pooledObject);
             }
         }
 
         public GameObject GetObject()
         {
-            GameObject pooledObject = _pooledObjects.FirstOrDefault(o => !o.activeSelf);
+            GameObject pooledObject = PooledObjects.FirstOrDefault(o => !o.activeSelf);
             if (pooledObject == null)
             {
                 pooledObject = Instantiate(_objectPrefab);
-                _pooledObjects.Add(pooledObject);
+                PooledObjects.Add(pooledObject);
             }
 
             pooledObject.SetActive(true);

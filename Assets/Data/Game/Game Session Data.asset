@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Game Session Data
   m_EditorClassIdentifier: 
   _sessionTime: 2
-  _enemySpawnTime: 15
+  _enemySpawnTime: 5
   _sessionTimeID: Session
   _enemySpawnTimeID: EnemySpawn

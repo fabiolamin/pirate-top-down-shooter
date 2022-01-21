@@ -380,21 +380,13 @@ PrefabInstance:
       propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 378671561}
-    - target: {fileID: 8004354291668585280, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
-      propertyPath: _movementSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004354291668585280, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
-      propertyPath: _rotationSpeed
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 1175020055931885393, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
+      propertyPath: _onDisabled.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 8533092067778624374}
     - target: {fileID: 8004354291668585281, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
       propertyPath: m_Name
       value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004354291668585281, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8004354291668585295, guid: 57067eb1d215d7f4abe7399021f288f3, type: 3}
       propertyPath: m_RootOrder
@@ -1553,6 +1545,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 378671561}
     - target: {fileID: 6445126743368520383, guid: 95ac5a790ad19974290dc1131b810253, type: 3}
+      propertyPath: _onSessionFinished.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 8533092067778624374}
+    - target: {fileID: 6445126743368520383, guid: 95ac5a790ad19974290dc1131b810253, type: 3}
       propertyPath: _onSessionTimeUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1529498292}
@@ -1716,3 +1712,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae6b83da83d03104bb0c109bbd01a91a, type: 3}
+--- !u!1 &8533092067778624374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7648672324116218542, guid: ae6b83da83d03104bb0c109bbd01a91a, type: 3}
+  m_PrefabInstance: {fileID: 8533092067778624373}
+  m_PrefabAsset: {fileID: 0}

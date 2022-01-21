@@ -6,7 +6,14 @@ namespace PirateGame.AI.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
+        private float _enemyRespawnTime = 0f;
+
         [SerializeField] private GameSessionData _gameSessionData;
+
+        private void Awake()
+        {
+            _enemyRespawnTime = PlayerPrefs.GetFloat(_gameSessionData.EnemyRespawnTimeID);
+        }
 
         public void GetReadyToSpawnEnemy(EnemyAI enemy)
         {
@@ -15,7 +22,7 @@ namespace PirateGame.AI.Enemy
 
         private IEnumerator SpawnEnemy(EnemyAI enemy)
         {
-            yield return new WaitForSeconds(_gameSessionData.EnemySpawnTime);
+            yield return new WaitForSeconds(_enemyRespawnTime);
             enemy.gameObject.SetActive(true);
             enemy.transform.position = enemy.SpawnOrigin;
         }

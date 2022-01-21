@@ -18,7 +18,7 @@ namespace PirateGame.Game
         private void Awake()
         {
             _playerScoreData.ResetScore();
-            _currentSessionTime = _gameSessionData.SessionTime;
+            _currentSessionTime = PlayerPrefs.GetFloat(_gameSessionData.SessionTimeID);
         }
 
         private void Update()

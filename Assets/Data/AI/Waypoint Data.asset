@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4aac989ce6210d428c16dc8a36d74ad, type: 3}
   m_Name: Waypoint Data
   m_EditorClassIdentifier: 
-  _width: 20
-  _height: 20
+  _width: 42
+  _height: 38
   _maxWaypointDistance: 2
-  _maxObstacleDistance: 1.8
+  _maxObstacleDistance: 4.7
   _minRandomWaypointDistance: 10
   _waypointPrefab: {fileID: 4916964736403403846, guid: b3abbce9a9ccd8846baa15551e58afef, type: 3}

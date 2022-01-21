@@ -13,14 +13,12 @@ namespace PirateGame.Data.AI
         [SerializeField] private float _width;
         [SerializeField] private float _height;
         [SerializeField] private float _maxWaypointDistance = 5f;
-        [SerializeField] private float _maxObstacleDistance = 5f;
         [SerializeField] private float _minRandomWaypointDistance = 10f;
         [SerializeField] Waypoint _waypointPrefab;
 
         public float Width { get { return _width; } }
         public float Height { get { return _height; } }
         public float MaxWaypointDistance { get { return _maxWaypointDistance; } }
-        public float MaxObstacleDistance { get { return _maxObstacleDistance; } }
         public Waypoint WaypointPrefab { get { return _waypointPrefab; } }
 
         public void AddWaypoint(Waypoint waypoint)

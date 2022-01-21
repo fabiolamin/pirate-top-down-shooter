@@ -58,7 +58,7 @@ namespace PirateGame.AI.Navigation
 
         private bool IsAnObstacleNear(Vector2 position)
         {
-            return _obstacles.Any(o => Vector2.Distance(position, o.transform.position) <= _waypointData.MaxObstacleDistance);
+            return _obstacles.Any(o => Vector2.Distance(position, o.transform.position) < o.Distance);
         }
 
         public void CheckIfAllWaypointsAreReady()

@@ -1,4 +1,3 @@
-using PirateGame.Combat;
 using PirateGame.Data.Combat;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,8 +10,8 @@ namespace PirateGame.Inputs
         private bool _canShootingInputBeTriggered = true;
 
         [SerializeField] private UnityEvent<Vector2> _onPlayerMoved;
-        [SerializeField] private ShootingTriggerEvent _onFire1ButtonTriggered;
-        [SerializeField] private ShootingTriggerEvent _onFire2ButtonTriggered;
+        [SerializeField] private UnityEvent<Vector2> _onFire1ButtonTriggered;
+        [SerializeField] private UnityEvent<Vector2> _onFire2ButtonTriggered;
         [SerializeField] private ShipCombatData _shipCombatData;
         private void Update()
         {

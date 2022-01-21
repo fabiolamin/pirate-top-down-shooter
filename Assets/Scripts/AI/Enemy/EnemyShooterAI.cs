@@ -1,11 +1,11 @@
-using PirateGame.Combat;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PirateGame.AI.Enemy
 {
     public class EnemyShooterAI : EnemyAI
     {
-        [SerializeField] private ShootingTriggerEvent _onShootingTriggered;
+        [SerializeField] private UnityEvent<Vector2> _onShootingTriggered;
 
         protected new void Update()
         {

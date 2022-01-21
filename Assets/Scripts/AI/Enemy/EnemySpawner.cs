@@ -28,13 +28,15 @@ namespace PirateGame.AI.Enemy
         {
             while (true)
             {
-                yield return new WaitForSeconds(_enemyRespawnTime);
                 _enemyIndex++;
                 _enemyIndex %= _enemies.Length;
 
                 GameObject enemy = _enemies[_enemyIndex].GetObject();
                 enemy.transform.position = _spawnLocations[Random.Range(0, _spawnLocations.Length)].position;
                 enemy.GetComponent<EnemyAI>().StartAIMovement();
+
+                yield return new WaitForSeconds(_enemyRespawnTime);
+
             }
         }
     }

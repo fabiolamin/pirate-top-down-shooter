@@ -570,6 +570,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5043562594036540272, guid: 39683ab959b4eb447896d2469ff6668e, type: 3}
+      propertyPath: _movementData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c1a094ff6167294e95f60b0c9878c2d, type: 2}
     - target: {fileID: 5043562594036540273, guid: 39683ab959b4eb447896d2469ff6668e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -667,6 +671,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5043562594036540273, guid: 39683ab959b4eb447896d2469ff6668e, type: 3}
   m_PrefabInstance: {fileID: 3092698218391758896}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2514375781549541489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004354291668585281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba600bb4b3d566848aeeb2d76b603e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 8004354290655669668}
 --- !u!114 &7838025979715979145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,19 +754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a2fd5001c552b458d12d1dd03a9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2514375781549541489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8004354291668585281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba600bb4b3d566848aeeb2d76b603e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 8004354290655669668}
 --- !u!114 &8292142303942104810
 MonoBehaviour:
   m_ObjectHideFlags: 0

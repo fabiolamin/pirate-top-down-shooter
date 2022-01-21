@@ -145,6 +145,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9003966046583412128, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
+      propertyPath: _movementData
+      value: 
+      objectReference: {fileID: 11400000, guid: a22525cd65cea6e47bf7dbe7249092b2, type: 2}
     - target: {fileID: 9003966046583412129, guid: 787389fc33bb7e649871c099ae35029c, type: 3}
       propertyPath: m_Name
       value: Enemy Shooter

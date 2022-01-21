@@ -7,6 +7,7 @@ namespace PirateGame.Game
     {
         public void LoadScene(int index)
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(index);
         }
     }

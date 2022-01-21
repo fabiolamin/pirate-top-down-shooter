@@ -9,7 +9,7 @@ namespace PirateGame.Utils
 
         private void Awake()
         {
-            _target = transform.root;
+            _target = transform.parent;
             _offset = transform.position - _target.position;
         }
 

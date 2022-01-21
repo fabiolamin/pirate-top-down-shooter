@@ -1,17 +1,17 @@
+using PirateGame.Data.Movement;
 using UnityEngine;
 
 namespace PirateGame.Movement
 {
-    public class CharacterMovement : MonoBehaviour
+    public class ShipMovement : MonoBehaviour
     {
-        private int _movementModifier = 1; 
+        private int _movementModifier = 1;
 
-        [SerializeField] private float _movementSpeed = 10f;
-        [SerializeField] private float _rotationSpeed = 5f;
+        [SerializeField] private ShipMovementData _movementData;
 
         public void Move(Vector2 newPosition)
         {
-            float speed = _movementSpeed * Time.deltaTime * _movementModifier;
+            float speed = _movementData.MovementSpeed * Time.deltaTime * _movementModifier;
             transform.position += new Vector3(newPosition.x * speed, newPosition.y * speed, transform.position.z);
 
             Rotate(newPosition);
@@ -23,7 +23,7 @@ namespace PirateGame.Movement
             {
                 float zDegree = Mathf.Atan2(newPosition.y, newPosition.x) * Mathf.Rad2Deg;
                 Quaternion newRotation = Quaternion.Euler(0f, 0f, zDegree);
-                float speed = _rotationSpeed * Time.deltaTime * _movementModifier;
+                float speed = _movementData.RotationSpeed * Time.deltaTime * _movementModifier;
                 transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, speed);
             }
         }

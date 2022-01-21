@@ -26,7 +26,7 @@ namespace PirateGame.AI.Enemy
             targetHealth = target.GetComponent<ShipHealth>();
         }
 
-        protected void Update()
+        protected new void Update()
         {
             base.Update();
             CheckAttack();

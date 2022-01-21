@@ -7,7 +7,7 @@ namespace PirateGame.AI.Enemy
     {
         [SerializeField] private ShootingTriggerEvent _onShootingTriggered;
 
-        protected void Update()
+        protected new void Update()
         {
             base.Update();
 

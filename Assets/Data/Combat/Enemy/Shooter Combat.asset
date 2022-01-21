@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc516ea713731d24dac4ebf7af5c88a9, type: 3}
   m_Name: Shooter Combat
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 2
   _shootingForce: 5
-  _reloadingTime: 1
-  _minShootingDistance: 5
+  _reloadingTime: 1.5
+  _minShootingDistance: 3.5
